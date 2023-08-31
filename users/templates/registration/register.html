@@ -1,0 +1,16 @@
+{% extends "reading/base.html" %}
+
+{% load bootstrap5 %}
+
+{% block content %}
+<form method="post" action="{% url 'users:register' %}">
+{% csrf_token %}
+
+{% bootstrap_form form %}
+{% buttons %}
+
+<button name="submit" class="btn btn-primary">Register</button>
+{% endbuttons %}
+<input type="hidden" name="next" value="{% url 'reading:index' %}" />
+</form>
+{% endblock content %}
