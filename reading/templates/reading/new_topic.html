@@ -1,0 +1,13 @@
+{% extends "reading/base.html" %}
+{% load bootstrap5 %}
+{% block content %}
+<h2>Add a new topic:</h2>
+
+<form action="{% url 'reading:new_topic' %}" method='post'>
+{% csrf_token %}
+{% bootstrap_form form %}
+{% buttons %}
+<button name="submit" class="btn btn-primary">Add topic</button>
+{% endbuttons %}
+</form>
+{% endblock content %}
